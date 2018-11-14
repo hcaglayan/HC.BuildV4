@@ -36,4 +36,6 @@ steps:
 - task: NuGetCommand@2
   inputs:
     command: push
-    publishVstsFeed: NuGet
+    nuGetFeedType: external
+    publishFeedCredentials: NuGet
+
