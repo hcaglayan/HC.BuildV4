@@ -8,9 +8,9 @@ using YamlDotNet.Serialization.NamingConventions;
 namespace HC.BuildV4.Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class ProjectsFileReaderTests
     {
-        private const string sampleProjectFile = @"---
+        private const string sampleProjectsFile = @"---
              - name: TestProject
                uses: 
                 - SomeOtherProject
@@ -24,13 +24,7 @@ namespace HC.BuildV4.Tests
         [TestMethod]
         public void ValidSample_AsExpected()
         {
-            var input = new StringReader(sampleProjectFile);
-
-            var deserializer = new DeserializerBuilder()
-                .WithNamingConvention(new CamelCaseNamingConvention())
-                .Build();
-
-            var projects = deserializer.Deserialize<Project[]>(input);
+            var projects = ProjectsFileReader.ReadProjectFilesFromYaml(sampleProjectsFile);
 
             Assert.IsNotNull(projects);
             Assert.IsTrue(projects.Length > 0);
