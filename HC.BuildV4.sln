@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		azure-pipelines.yml = azure-pipelines.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HC.BuildV4.Tests", "HC.BuildV4.Tests\HC.BuildV4.Tests.csproj", "{F64D3B95-BD48-40BA-A828-EC278F6FAEE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HC.BuildV4.Tests", "HC.BuildV4.Tests\HC.BuildV4.Tests.csproj", "{0E41B4DC-17CC-4B04-802E-210974D2ADC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,10 +22,10 @@ Global
 		{73853A29-60F4-4176-A7FE-A89E51567204}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73853A29-60F4-4176-A7FE-A89E51567204}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73853A29-60F4-4176-A7FE-A89E51567204}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F64D3B95-BD48-40BA-A828-EC278F6FAEE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F64D3B95-BD48-40BA-A828-EC278F6FAEE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F64D3B95-BD48-40BA-A828-EC278F6FAEE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F64D3B95-BD48-40BA-A828-EC278F6FAEE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E41B4DC-17CC-4B04-802E-210974D2ADC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E41B4DC-17CC-4B04-802E-210974D2ADC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E41B4DC-17CC-4B04-802E-210974D2ADC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E41B4DC-17CC-4B04-802E-210974D2ADC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
