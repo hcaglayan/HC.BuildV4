@@ -11,7 +11,7 @@ namespace HC.BuildV4
     /// <summary>
     /// Provides a way for multiple BuildV3 projects to build against a single target
     /// </summary>
-    public class PrepareBuildV4Task : Microsoft.Build.Utilities.Task
+    public class BuildV4Task : Microsoft.Build.Utilities.Task
     {
 
         [Microsoft.Build.Framework.Required]
@@ -27,7 +27,14 @@ namespace HC.BuildV4
         /// <summary>
         /// Path to the Restored Artefacts. Relative or absolute
         /// </summary>
-        public string RestoredArtefacts { get; set; } = "RestoredArtefacts";
+        [Microsoft.Build.Framework.Required]
+        public string RestoredArtefacts { get; set; }
+
+        /// <summary>
+        /// Path to the Produced Artefacts. Relative or absolute
+        /// </summary>
+        [Microsoft.Build.Framework.Required]
+        public string ProducedArtefacts { get; set; }
 
 
 
@@ -61,6 +68,18 @@ namespace HC.BuildV4
                 return false;
             }
 
+
+            string producedArtefactsPath;
+            if (Path.IsPathRooted(ProducedArtefacts))
+            {
+                producedArtefactsPath = ProducedArtefacts;
+            }
+            else
+            {
+                producedArtefactsPath = Path.Combine(WorkingDirectory, ProducedArtefacts);
+            }
+
+            
             string projectDefnsContent = File.ReadAllText(ProjectDefns);
             var projects = ProjectsFileReader.ReadProjectFilesFromYaml(projectDefnsContent);
             foreach (var project in projects)
@@ -134,7 +153,7 @@ namespace HC.BuildV4
                     return false;
                 }
 
-                string publishToTarget = Path.Combine(restoredArtefactsPath, project.Name);
+                string publishToTarget = Path.Combine(producedArtefactsPath, project.Name);
                 CopyDirectory(targetsPath, "*.*", true, publishToTarget);
 
                 Log.LogMessage("Project {0} published to path: '{1}'", project.Name, publishToTarget);

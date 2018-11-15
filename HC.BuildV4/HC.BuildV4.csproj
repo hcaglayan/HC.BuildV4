@@ -66,7 +66,7 @@
   <ItemGroup>
     <Compile Include="Model\Project.cs" />
     <Compile Include="Model\ProjectsFileReader.cs" />
-    <Compile Include="PrepareBuildV4Task.cs" />
+    <Compile Include="BuildV4Task.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
